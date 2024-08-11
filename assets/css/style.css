@@ -1,22 +1,4 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 :root {
-  /**
-   * colors
-   */
-
-  /* gradient */
-
   --bg-gradient-onyx: linear-gradient(
     to bottom right,
     hsl(240, 1%, 25%) 3%,
@@ -30,12 +12,12 @@
     hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right,
-    hsl(45, 100%, 71%) 0%,
+    hsl(117, 67%, 48%) 0%,
     hsla(36, 100%, 69%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
       135deg,
-      hsla(45, 100%, 71%, 0.251) 0%,
+      hsla(138, 66%, 44%, 0.251) 0%,
       hsla(35, 100%, 68%, 0) 59.86%
     ),
     hsl(240, 2%, 13%);
@@ -44,10 +26,10 @@
     hsl(0, 0%, 25%) 0%,
     hsla(0, 0%, 25%, 0) 50%
   );
-  --text-gradient-yellow: linear-gradient(
+  --text-gradient-green: linear-gradient(
     to right,
-    hsl(45, 100%, 72%),
-    hsl(35, 100%, 68%)
+    hsl(104, 82%, 55%),
+    hsl(122, 65%, 51%)
   );
 
   /* solid */
@@ -56,14 +38,15 @@
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
+  --smoky-black: hsl(102, 95%, 83%);
+  
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
+  --orange-yellow-crayola: hsl(111, 62%, 48%);
+  --vegas-gold: hsl(105, 65%, 49%);
   --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --light-gray-70: hsla(118, 100%, 59%, 0.7);
+  --bittersweet-shimmer: hsl(155, 56%, 48%);
 
   /**
    * typography
@@ -174,12 +157,13 @@ body {
 
 .sidebar,
 article {
-  background: var(--eerie-black-2);
+  background: rgb(16, 16, 16);
   border: 1px solid var(--jet);
   border-radius: 20px;
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
+  animation: fade 0.8s ease backwards;
 }
 
 .separator {
@@ -312,7 +296,7 @@ article.active {
   inset: 1px;
   background: var(--bg-gradient-jet);
   border-radius: inherit;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 /*-----------------------------------*\
@@ -332,12 +316,12 @@ main {
 .sidebar {
   margin-bottom: 15px;
   max-height: 112px;
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: var(--transition-2);
 }
 
 .sidebar.active {
-  max-height: 405px;
+  max-height: 450px;
 }
 
 .sidebar-info {
@@ -507,6 +491,7 @@ main {
 .navbar-link:hover,
 .navbar-link:focus {
   color: var(--light-gray-70);
+  transition-delay: 0.2s;
 }
 
 .navbar-link.active {
@@ -526,6 +511,8 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about-text p {
@@ -545,9 +532,10 @@ main {
 }
 
 .service-list {
-  display: grid;
+  display: contents;
   grid-template-columns: 1fr;
   gap: 20px;
+  
 }
 
 .service-item {
@@ -557,6 +545,7 @@ main {
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
+  margin-bottom: 20px;
 }
 
 .service-item::before {
@@ -574,6 +563,7 @@ main {
 
 .service-icon-box img {
   margin: auto;
+  
 }
 
 .service-content-box {
